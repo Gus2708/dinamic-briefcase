@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body{
+    background: #EAECEE;
+    font-family: "Oswald", sans-serif, "Open Sans", sans-serif ;
+
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Header */
+
+header{
+    padding: 30px 0;
+
+}
+
+header .logo{
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    font-family: 'Varela Round', sans-serif;
+    
+}
+
+header .logo p{
+    color: #9b9b9b;
+    padding-bottom: 30px;
+    
+
+}
+
+header form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+header .barra-busqueda{
+
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    padding: 0 20px;
+    border-radius: 100px;
+    border: 1.5px solid #85929E ;
+    text-align: center;
+    font-weight: lighter;
+    
+    
+}
+
+header .categorias{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+header .categorias a{
+    color: #9b9b9b;
+    text-decoration-line: none;
+    margin: 10px 20px;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+header .categorias a.activo{
+    color: #494949;
+}
+
+header .barra-busqueda:focus{
+    border-radius: 100px;
+}
+
+
+/*Grid*/
+
+.grid .item-contenido{
+    position: relative;
+    
+}
+
+.grid{
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: opacity  0.5s linear 1s;
+}
+
+.grid.imagenes-cargadas{
+    opacity: 1;
+}
+
+.grid .item{
+    position: absolute;
+    display: block;
+    padding: 0;
+    margin: 10px;
+    width: calc(33.33333% - 20px);
+}
+
+.grid .item img{
+    width: 100%;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+
+img{
+    border-radius: 10px;
+}
+
+/*overlay*/
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .9);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.overlay.activo{
+    display: flex;
+}
+
+.overlay img{
+    max-width: 300px;
+    width: 300px;
+    height: 300px;
+}
+
+.overlay .descripcion{
+    display: block;
+    justify-content: center;
+    background: rgb(243, 246, 248) ;
+    padding: 15px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1.5px solid #85929E ;
+    font-family: 'Karla', sans-serif;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+.contenedor-img{
+    position: relative;
+    box-shadow: 0 2px 1px 0 solid black;
+}
+
+
+.overlay #btn-cerrarpopup{
+    background: none;
+    font-size: 20px;
+    color: rgb(191, 200, 209);
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    opacity: 50%;
+}
+
+/*Footer*/
+
+footer .redes-sociales{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+}
+
+footer .redes-sociales a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #85929E ;
+    color: #EAECEE;
+    margin: 20px;
+    text-align: center;
+    border-radius: 100px;
+    transition: .3s ease all;
+}
+
+footer .redes-sociales .instagram{
+    color: #cf2873 ;
+}
+footer .redes-sociales .github{
+    color: #ffffff ;
+}
+footer .redes-sociales .facebook{
+    color: #3b5998 ;
+}
+
+footer .redes-sociales a i{
+    font-size: 25px;
+    line-height: 50px;
+}
+
+footer .icono:hover a{
+    animation: icono .5s ease;
+}
+
+@keyframes icono{
+    from{transform: rotate3d(0,0,0,0);
+
+    }
+    to{transform: rotate3d(0,1,0,360deg);
+
+    }
+
+}
+
+footer .creado-por{
+    margin-bottom: 40px;
+    text-align: center;
+    color: #9b9b9b;
+    font-size: 16px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+footer .creado-por a{
+    color: rgba(115, 128, 139, 0.904);;
+    text-decoration: none;
+    
+}
+
+footer .creado-por a:hover{
+    color: rgb(95, 110, 121);
+    text-decoration: none;
+    
+    
+}
+
+header .logo i{
+    color: #85929E;
+   padding: 10px;
+
+}
+
+/* mediaquery */
+
+@media screen and (max-width: 700px){
+    .grid .item{
+        width: calc(50% - 20px);
+
+    }
+
+    header .barra-busqueda{
+        width: 100%;
+    }
+}
